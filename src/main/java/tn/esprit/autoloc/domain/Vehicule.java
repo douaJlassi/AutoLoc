@@ -5,8 +5,8 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+
 import java.math.BigDecimal;
-import java.time.LocalDate;
 
 @Entity
 @Getter
@@ -14,15 +14,20 @@ import java.time.LocalDate;
 @AllArgsConstructor
 @NoArgsConstructor
 
-public class Paiement {
+public class Vehicule {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    Long idPaiement;
+    private Long idVehicule;
 
-    BigDecimal montant;
-    LocalDate datePaiement;
+    private String immatriculation;
+    private String marque;
+    private String modele;
 
     @Enumerated(EnumType.STRING)
-    ModePaiement modePaiement;
+    private CategorieVehicule categorie;
 
+    private BigDecimal tarifJournalier;
+
+    @Enumerated(EnumType.STRING)
+    private StatutVehicule statut;
 }
