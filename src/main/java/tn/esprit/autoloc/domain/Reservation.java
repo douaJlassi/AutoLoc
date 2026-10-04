@@ -23,4 +23,9 @@ public class Reservation {
 
     @OneToOne(mappedBy ="reservation")
     Contrat contrat;
+
+    @ManyToOne
+    Client client;
+    @ManyToOne
+    Vehicule vehicule;
 }

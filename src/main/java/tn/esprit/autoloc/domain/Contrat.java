@@ -25,6 +25,7 @@ public class Contrat {
     private LocalDate dateSignature;
     private BigDecimal montantTotal;
     private boolean valide;
+
     @OneToOne
     Reservation reservation;
 

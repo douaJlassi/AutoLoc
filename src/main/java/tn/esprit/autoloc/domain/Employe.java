@@ -18,4 +18,7 @@ public class Employe {
     private String prenom;
     @Enumerated(EnumType.STRING)
     private RoleEmploye  roleEmploye;
+
+    @ManyToOne
+    Agence agence1;
 }

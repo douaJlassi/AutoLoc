@@ -29,4 +29,10 @@ public class Vehicule {
 
     @ManyToMany(fetch = FetchType.EAGER)
     List<Equipement> equipement= new ArrayList<>();
+
+    @OneToMany(mappedBy = "vehicule")
+    private List<Reservation> reservation= new ArrayList<>();
+
+    @ManyToOne
+    Agence agence;
 }

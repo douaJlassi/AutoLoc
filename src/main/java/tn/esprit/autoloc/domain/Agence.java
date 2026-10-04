@@ -1,10 +1,11 @@
 package tn.esprit.autoloc.domain;
 
-import jakarta.persistence.Entity;
-import jakarta.persistence.GeneratedValue;
-import jakarta.persistence.GenerationType;
-import jakarta.persistence.Id;
+import jakarta.persistence.*;
 import lombok.*;
+
+import java.util.ArrayList;
+import java.util.List;
+
 @Getter
 @Setter
 @NoArgsConstructor
@@ -20,5 +21,11 @@ public class Agence {
     private String ville;
     private String adresse;
     private String telephone;
+
+    @OneToMany(mappedBy = "agence")
+    List<Vehicule> vehicules= new ArrayList<>();
+
+    @OneToMany(mappedBy = "agence1")
+    List<Employe> employes= new ArrayList<>();
 
 }
