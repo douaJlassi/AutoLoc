@@ -26,6 +26,7 @@ public class Client {
     private String telephone;
     private String numPermis;
     private LocalDate dateInscription;
+
     @OneToMany(mappedBy = "client")
     List<Reservation> reservations;
 }
